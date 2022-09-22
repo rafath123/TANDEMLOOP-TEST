@@ -1,0 +1,50 @@
+import java. util.*;
+class TotCount{
+	public static int getTotCount(Integer  num  ,  ArrayList<Integer> ar){
+		int count=0;
+		for(Object i: ar){
+			Integer x = (Integer) i; 
+			if (x% num == 0){
+				count ++;
+			}
+		}
+		return count;
+	}
+	public static void main(String [] args){
+		Scanner sc = new Scanner(System.in);
+		boolean x = true;
+		ArrayList<Integer> ar =  new ArrayList<Integer>();
+		while( x== true){
+			System.out.println("Enter List 1 data : (press 0 end list)");
+			Integer input= sc.nextInt();
+			
+			if(input ==0){
+				x= false;
+			}
+			else{	
+				ar.add(input);
+			}
+		}
+		x=true;
+		ArrayList<Integer> ar2 = new ArrayList<Integer>();
+		while( x== true){
+			System.out.println("Enter List 2 data : (press 0 end list)");
+			Integer input= sc.nextInt();
+			if(input ==0){
+				x= false;
+			}
+			else{	
+				ar2.add(input);
+			}
+		}
+		int count =0;
+		
+		HashMap<Integer, Integer> hs = new HashMap<Integer, Integer>();
+		for(Object i: ar){
+			Integer p = (Integer)i;
+			count = getTotCount( p ,  ar2);
+			hs.put(p, count);
+		}
+		System.out.println(hs);
+	}
+}
