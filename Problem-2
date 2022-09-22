@@ -1,0 +1,28 @@
+package simplePrograms;
+
+import java.util.Scanner;
+
+public class Series {
+	public static String getSeries(int num){
+		String s ="";
+		int temp= 1; 
+		for(int i = 0 ; i< num ; i++){
+			if(i == 0){
+				s= s+ temp ;
+			}
+			else{
+				s = s+ "," + temp;
+			}
+			temp = temp+2;
+		}
+		
+		return s;
+		}
+		public static void main(String [] args){
+			Scanner sc = new Scanner(System.in);
+			System.out.println("enter number :");
+			int i = sc.nextInt();
+			String s = getSeries(i);
+			System.out.println("number series is :" + s);
+		}
+}
